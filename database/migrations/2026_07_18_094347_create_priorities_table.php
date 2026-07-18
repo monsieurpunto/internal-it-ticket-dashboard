@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('issue_categories', function (Blueprint $table) {
+        Schema::create('priorities', function (Blueprint $table) {
             $table->ulid('id')->primary();
 
             $table->string('name');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('issue_categories');
+        Schema::dropIfExists('priorities');
     }
 };
