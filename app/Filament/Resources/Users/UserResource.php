@@ -14,14 +14,40 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use UnitEnum;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('Settings');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('Users');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('User');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Users');
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
 
     public static function form(Schema $schema): Schema
     {
@@ -35,9 +61,7 @@ class UserResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
@@ -48,11 +72,12 @@ class UserResource extends Resource
             'edit' => EditUser::route('/{record}/edit'),
         ];
     }
+
     public static function getEloquentQuery(): Builder
-{
-    return parent::getEloquentQuery()
-        ->whereDoesntHave('roles', function (Builder $query) {
-            $query->where('name', 'super_admin');
-        });
-}
+    {
+        return parent::getEloquentQuery()
+            ->whereDoesntHave('roles', function (Builder $query) {
+                $query->where('name', 'super_admin');
+            });
+    }
 }

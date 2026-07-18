@@ -19,7 +19,7 @@ class StatusResource extends Resource
 {
     protected static ?string $model = Status::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTag;
 
     protected static ?string $recordTitleAttribute = 'name';
 

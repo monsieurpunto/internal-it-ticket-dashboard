@@ -19,7 +19,7 @@ class PriorityResource extends Resource
 {
     protected static ?string $model = Priority::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBolt;
 
     protected static ?string $recordTitleAttribute = 'name';
 public static function getNavigationGroup(): string|UnitEnum|null
