@@ -12,6 +12,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
+use Filament\Panel;
+
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
@@ -21,6 +23,21 @@ class User extends Authenticatable
 
     use HasRoles;
 
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return match ($panel->getId()) {
+            'auth' => true,
+
+            'admin' => $this->hasAnyRole(['super_admin','admin']),
+
+            'app' => $this->hasAnyRole([
+                'super_admin',
+                'user',
+            ]),
+
+            default => false,
+        };
+    }
     /**
      * Get the attributes that should be cast.
      *
