@@ -98,41 +98,6 @@ The application implements role-based authorization to ensure users only access 
 
 ---
 
-# Screenshots
-
-> Replace the placeholders below with actual application screenshots.
-
----
-
-## Login Page
-
-![Login Page](docs/screenshots/login-page.png)
-
----
-
-## Admin Dashboard
-
-![Admin Dashboard](docs/screenshots/admin-dashboard.png)
-
----
-
-## Ticket Management
-
-![Ticket Management](docs/screenshots/ticket-management.png)
-
----
-
-## Ticket Detail
-
-![Ticket Detail](docs/screenshots/ticket-detail.png)
-
----
-
-## User Dashboard
-
-![User Dashboard](docs/screenshots/user-dashboard.png)
-
----
 
 # Default Accounts
 
@@ -142,8 +107,8 @@ The application implements role-based authorization to ensure users only access 
 
 | Field | Value |
 |-------|-------|
-| Email | `superadmin@admin.com` |
-| Password | `123456789` |
+| Email | `admin@admin.com` |
+| Password | `12345678` |
 
 ---
 
@@ -151,8 +116,13 @@ The application implements role-based authorization to ensure users only access 
 
 | Field | Value |
 |-------|-------|
-| Email | `user@example.com` |
-| Password | `********` |
+| Email | `jajal1@jajal.com` |
+| Password | `12345678` |
+
+| Field | Value |
+|-------|-------|
+| Email | `jajal2@jajal.com` |
+| Password | `12345678` |
 
 > Replace the password placeholders if demo credentials are intended to be shared.
 

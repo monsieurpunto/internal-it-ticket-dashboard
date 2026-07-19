@@ -26,7 +26,6 @@ class AuthPanelProvider extends PanelProvider
             ->path('auth')
             ->darkMode(false)
             ->login()
-            ->registration()
             ->colors([
                 'primary' => Color::Indigo,
             ])
