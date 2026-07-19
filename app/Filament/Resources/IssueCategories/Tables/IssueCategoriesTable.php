@@ -16,7 +16,7 @@ class IssueCategoriesTable
             ->columns([
                 TextColumn::make('id')
                     ->label('ID')
-                    ->toggledHiddenByDefault(true)
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
