@@ -1,58 +1,189 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LeadGeeks Internal Ticketing Dashboard
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web-based internal IT ticket management system developed as part of the LeadGeeks technical assessment.
 
-## About Laravel
+The application enables employees to submit IT support requests while providing administrators with a centralized dashboard to manage, prioritize, assign, and resolve support tickets through a modern web interface.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The LeadGeeks Internal Ticketing Dashboard is designed to simplify internal IT support workflows.
 
-## Learning Laravel
+Employees can create and monitor their own support requests, while administrators are able to oversee all submitted tickets, update their status, assign priorities, and manage supporting master data.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The application implements role-based authorization to ensure users only access features that are permitted for their assigned role.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+# Technologies Used
 
-## Agentic Development
+## Backend
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- PHP 8.4
+- Laravel 13
+- PostgreSQL
 
-```bash
-composer require laravel/boost --dev
+## Admin Panel
 
-php artisan boost:install
+- Filament v5
+- Filament Shield
+
+## Authentication & Authorization
+
+- Laravel Authentication
+- Spatie Laravel Permission
+
+## Frontend
+
+- Blade
+- Tailwind CSS
+- Livewire
+
+## Deployment
+
+- Dokploy
+- Nixpacks
+
+---
+
+# Features Implemented
+
+## Authentication
+
+- User Login
+- User Logout
+- Role-based access control
+
+---
+
+## User Features
+
+- Create IT support tickets
+- View own submitted tickets
+- Edit open tickets
+- Delete open tickets
+- Track ticket status
+
+---
+
+## Administrator Features
+
+- Dashboard overview
+- Ticket management
+- Status management
+- Priority management
+- Category management
+- User management
+- Role & Permission management (Filament Shield)
+
+---
+
+## Dashboard
+
+- Total Tickets
+- Open Tickets
+- In Progress Tickets
+- Resolved Tickets
+- Closed Tickets
+- High Priority Tickets
+
+---
+
+## Security
+
+- Role-based authorization
+- User ownership protection
+- Permission management using Filament Shield
+
+---
+
+# Screenshots
+
+> Replace the placeholders below with actual application screenshots.
+
+---
+
+## Login Page
+
+![Login Page](docs/screenshots/login-page.png)
+
+---
+
+## Admin Dashboard
+
+![Admin Dashboard](docs/screenshots/admin-dashboard.png)
+
+---
+
+## Ticket Management
+
+![Ticket Management](docs/screenshots/ticket-management.png)
+
+---
+
+## Ticket Detail
+
+![Ticket Detail](docs/screenshots/ticket-detail.png)
+
+---
+
+## User Dashboard
+
+![User Dashboard](docs/screenshots/user-dashboard.png)
+
+---
+
+# Default Accounts
+
+> Demo accounts used during development.
+
+## Super Administrator
+
+| Field | Value |
+|-------|-------|
+| Email | `superadmin@admin.com` |
+| Password | `123456789` |
+
+---
+
+## User
+
+| Field | Value |
+|-------|-------|
+| Email | `user@example.com` |
+| Password | `********` |
+
+> Replace the password placeholders if demo credentials are intended to be shared.
+
+---
+
+# Project Structure
+
+```
+app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+# License
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+This project was developed solely for the LeadGeeks technical assessment.
 
-## Code of Conduct
+All source code remains the intellectual property of the author unless otherwise agreed.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+# Author
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Your Name**
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+GitHub:
+https://github.com/monsieurpunto
