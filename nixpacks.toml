@@ -11,17 +11,4 @@ nixPkgs = [
 ]
 
 [start]
-cmd = "bash -c '\
-php artisan migrate --force && \
-php artisan cache:clear && \
-php artisan config:clear && \
-php artisan route:clear && \
-php artisan view:clear && \
-php artisan event:clear && \
-php artisan storage:link || true && \
-php artisan icons:cache && \
-php artisan optimize && \
-(php artisan schedule:work &) && \
-echo \"LeadGeeks Internal Ticketing is ready!\" && \
-node /assets/scripts/prestart.mjs /assets/nginx.template.conf /nginx.conf && \
-(php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)'"
+cmd = "bash -c 'php artisan migrate --force && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan event:clear && (php artisan storage:link || true) && php artisan icons:cache && php artisan optimize && (php artisan schedule:work &) && echo \"LeadGeeks Internal Ticketing is ready!\" && node /assets/scripts/prestart.mjs /assets/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)'"
