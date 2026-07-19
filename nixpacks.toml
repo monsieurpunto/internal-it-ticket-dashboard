@@ -1,0 +1,14 @@
+# .nixpacks.toml
+
+[phases.setup]
+nixPkgs = [
+  "nodejs_22",
+  "(php84.withExtensions (pe: pe.enabled ++ []))",
+  "nginx",
+  "postgresql",
+  "php84Packages.composer",
+  "npm-11_x"
+]
+
+[start]
+cmd = "bash -c 'php artisan migrate --force && php artisan cache:clear && php artisan storage:link && php artisan icons:cache && php artisan optimize && (php artisan schedule:work &) && echo \"LeadGeeks Internal Ticketing is ready!\" && node /assets/scripts/prestart.mjs /assets/nginx.template.conf /nginx.conf && (php-fpm -y /assets/php-fpm.conf & nginx -c /nginx.conf)'"

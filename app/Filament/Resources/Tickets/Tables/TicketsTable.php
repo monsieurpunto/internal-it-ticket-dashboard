@@ -8,6 +8,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Grouping\Group;
 use Filament\Tables\Table;
 
 class TicketsTable
@@ -16,6 +17,10 @@ class TicketsTable
     {
         return $table
             ->defaultSort('created_at', 'desc')
+            ->groups([
+                Group::make('status.name')->collapsible(true)
+                    ->label('Status'),
+            ])->defaultGroup('status.name')
             ->columns([
                 TextColumn::make('createdBy.name')
                     ->label('Reporter')
@@ -24,7 +29,7 @@ class TicketsTable
 
                 TextColumn::make('assignedTo.name')
                     ->label('Assigned To')
-                    ->placeholder('-')
+                    ->placeholder('To be assigned')
                     ->searchable()
                     ->sortable(),
 

@@ -18,47 +18,60 @@ class TicketStatsOverview extends StatsOverviewWidget
 
         return [
             Stat::make('Total Tickets', Ticket::count())
-                ->icon('heroicon-o-ticket')
+                ->description('All tickets in the system')
+                ->descriptionIcon('heroicon-m-ticket')
+                ->icon('heroicon-m-ticket')
+                ->color('primary')
                 ->url(TicketResource::getUrl()),
 
             Stat::make(
                 'Open',
                 Ticket::where('status_id', $statuses['Open'])->count(),
             )
+                ->description('Waiting for assignment')
+                ->descriptionIcon('heroicon-m-folder-open')
+                ->icon('heroicon-m-clock')
                 ->color('info')
-                ->icon('heroicon-o-clock')
                 ->url($this->statusUrl($statuses['Open'])),
 
             Stat::make(
                 'In Progress',
                 Ticket::where('status_id', $statuses['In Progress'])->count(),
             )
+                ->description('Currently being worked on')
+                ->descriptionIcon('heroicon-m-wrench-screwdriver')
+                ->icon('heroicon-m-wrench-screwdriver')
                 ->color('warning')
-                ->icon('heroicon-o-wrench-screwdriver')
                 ->url($this->statusUrl($statuses['In Progress'])),
 
             Stat::make(
                 'High Priority',
                 Ticket::where('priority_id', $priorities['High'])->count(),
             )
+                ->description('Requires immediate attention')
+                ->descriptionIcon('heroicon-m-exclamation-triangle')
+                ->icon('heroicon-m-exclamation-triangle')
                 ->color('danger')
-                ->icon('heroicon-o-exclamation-triangle')
                 ->url($this->priorityUrl($priorities['High'])),
 
             Stat::make(
                 'Resolved',
                 Ticket::where('status_id', $statuses['Resolved'])->count(),
             )
+                ->description('Successfully resolved')
+                ->descriptionIcon('heroicon-m-check-circle')
+                ->icon('heroicon-m-check-circle')
                 ->color('success')
-                ->icon('heroicon-o-check-circle')
                 ->url($this->statusUrl($statuses['Resolved'])),
 
             Stat::make(
                 'Closed',
                 Ticket::where('status_id', $statuses['Closed'])->count(),
             )
+                ->description('Completed and archived')
+                ->descriptionIcon('heroicon-m-lock-closed')
+                ->icon('heroicon-m-lock-closed')
                 ->color('gray')
-                ->icon('heroicon-o-lock-closed')
                 ->url($this->statusUrl($statuses['Closed'])),
         ];
     }

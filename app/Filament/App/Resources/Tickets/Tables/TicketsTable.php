@@ -18,6 +18,8 @@ class TicketsTable
             ->columns([
                 TextColumn::make('title')
                     ->label(__('Title'))
+                    ->limit(10)
+                    ->tooltip(fn ($state, $record) => $record->title)
                     ->searchable(),
 
                 TextColumn::make('issueCategory.name')
@@ -38,7 +40,7 @@ class TicketsTable
 
                 TextColumn::make('assignedTo.name')
                     ->label(__('Assigned To'))
-                    ->placeholder('-')
+                    ->placeholder('To be assigned')
                     ->searchable(),
 
                 TextColumn::make('created_at')
