@@ -27,14 +27,16 @@ class IssueCategoryResource extends Resource
     {
         return __('Settings');
     }
+
     public static function getNavigationLabel(): string
     {
         return __('Issue Categories');
     }
+
     protected static ?string $modelLabel = 'Issue Category';
 
     protected static ?string $pluralModelLabel = 'Issue Categories';
-    
+
     protected static ?int $navigationSort = 1;
 
     public static function form(Schema $schema): Schema

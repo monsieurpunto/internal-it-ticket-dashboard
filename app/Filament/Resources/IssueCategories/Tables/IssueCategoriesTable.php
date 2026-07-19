@@ -21,8 +21,8 @@ class IssueCategoriesTable
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('description')
-    ->limit(50)
-    ->toggleable(),
+                    ->limit(50)
+                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

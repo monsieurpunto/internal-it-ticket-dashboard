@@ -25,6 +25,26 @@ class Ticket extends Model
         'description',
     ];
 
+    public function isOpen(): bool
+    {
+        return $this->status?->name === 'Open';
+    }
+
+    public function isInProgress(): bool
+    {
+        return $this->status?->name === 'In Progress';
+    }
+
+    public function isResolved(): bool
+    {
+        return $this->status?->name === 'Resolved';
+    }
+
+    public function isClosed(): bool
+    {
+        return $this->status?->name === 'Closed';
+    }
+
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');

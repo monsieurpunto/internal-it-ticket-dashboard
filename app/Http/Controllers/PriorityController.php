@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Priority;
 use App\Http\Requests\StorePriorityRequest;
 use App\Http\Requests\UpdatePriorityRequest;
+use App\Models\Priority;
 
 class PriorityController extends Controller
 {

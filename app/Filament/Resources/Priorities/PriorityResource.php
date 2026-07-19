@@ -22,21 +22,23 @@ class PriorityResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBolt;
 
     protected static ?string $recordTitleAttribute = 'name';
-public static function getNavigationGroup(): string|UnitEnum|null
-{
-    return __('Settings');
-}
 
-public static function getNavigationLabel(): string
-{
-    return __('Priorities');
-}
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('Settings');
+    }
 
-protected static ?string $modelLabel = 'Priority';
+    public static function getNavigationLabel(): string
+    {
+        return __('Priorities');
+    }
 
-protected static ?string $pluralModelLabel = 'Priorities';
+    protected static ?string $modelLabel = 'Priority';
 
-protected static ?int $navigationSort = 2;
+    protected static ?string $pluralModelLabel = 'Priorities';
+
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return PriorityForm::configure($schema);

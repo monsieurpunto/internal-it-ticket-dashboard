@@ -24,20 +24,20 @@ class StatusResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function getNavigationGroup(): string|UnitEnum|null
-{
-    return __('Settings');
-}
+    {
+        return __('Settings');
+    }
 
-public static function getNavigationLabel(): string
-{
-    return __('Statuses');
-}
+    public static function getNavigationLabel(): string
+    {
+        return __('Statuses');
+    }
 
-protected static ?string $modelLabel = 'Status';
+    protected static ?string $modelLabel = 'Status';
 
-protected static ?string $pluralModelLabel = 'Statuses';
+    protected static ?string $pluralModelLabel = 'Statuses';
 
-protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
     {

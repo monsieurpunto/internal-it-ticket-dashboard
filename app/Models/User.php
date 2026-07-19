@@ -18,7 +18,9 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
     use HasRoles;
+
     /**
      * Get the attributes that should be cast.
      *
@@ -33,12 +35,12 @@ class User extends Authenticatable
     }
 
     public function createdTickets(): HasMany
-{
-    return $this->hasMany(Ticket::class, 'created_by');
-}
+    {
+        return $this->hasMany(Ticket::class, 'created_by');
+    }
 
-public function assignedTickets(): HasMany
-{
-    return $this->hasMany(Ticket::class, 'assigned_to');
-}
+    public function assignedTickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class, 'assigned_to');
+    }
 }

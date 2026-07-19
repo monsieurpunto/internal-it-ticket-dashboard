@@ -10,6 +10,7 @@ class Status extends Model
 {
     use HasUlids;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +22,8 @@ class Status extends Model
     ];
 
     public function tickets(): HasMany
-{
-    return $this->hasMany(Ticket::class);
-}
-}
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    }
