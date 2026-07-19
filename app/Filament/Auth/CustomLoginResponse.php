@@ -15,7 +15,7 @@ class CustomLoginResponse implements LoginResponseContract
         /** @var User $user */
         $user = Auth::user();
 
-        return $user->hasRole('super_admin')
+        return $user->hasAnyRole(['super_admin', 'admin'])
             ? redirect('/admin')
             : redirect('/app');
     }

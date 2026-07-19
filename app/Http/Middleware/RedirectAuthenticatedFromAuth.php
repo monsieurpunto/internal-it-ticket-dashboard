@@ -21,9 +21,11 @@ class RedirectAuthenticatedFromAuth
                 $request->routeIs('filament.auth.auth.login') ||
                 $request->routeIs('filament.auth.auth.register')
             ) {
-                return $user->hasRole('super_admin')
-                    ? redirect('/admin')
-                    : redirect('/app');
+                if ($user->hasAnyRole(['super_admin', 'admin'])) {
+                    return redirect('/admin');
+                }
+
+                return redirect('/app');
             }
         }
 
