@@ -24,6 +24,7 @@ class UserForm
                 Select::make('roles')
                     ->relationship('roles', 'name')
                     ->preload()
+                    ->dehydrated(false)
                     ->required(),
                 TextInput::make('password')
                     ->label(__('Password'))
