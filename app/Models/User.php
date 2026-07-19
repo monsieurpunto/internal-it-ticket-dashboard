@@ -25,18 +25,19 @@ class User extends Authenticatable
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return match ($panel->getId()) {
-            'auth' => true,
+        // return match ($panel->getId()) {
+        //     'auth' => true,
 
-            'admin' => $this->hasAnyRole(['super_admin','admin']),
+        //     'admin' => $this->hasAnyRole(['super_admin','admin']),
 
-            'app' => $this->hasAnyRole([
-                'super_admin',
-                'user',
-            ]),
+        //     'app' => $this->hasAnyRole([
+        //         'super_admin',
+        //         'user',
+        //     ]),
 
-            default => false,
-        };
+        //     default => false,
+        // };
+        return true;
     }
     /**
      * Get the attributes that should be cast.
