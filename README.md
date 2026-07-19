@@ -124,7 +124,6 @@ The application implements role-based authorization to ensure users only access 
 | Email | `jajal2@jajal.com` |
 | Password | `12345678` |
 
-> Replace the password placeholders if demo credentials are intended to be shared.
 
 ---
 
@@ -152,8 +151,6 @@ All source code remains the intellectual property of the author unless otherwise
 ---
 
 # Author
-
-**Your Name**
 
 GitHub:
 https://github.com/monsieurpunto
