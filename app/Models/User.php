@@ -26,19 +26,19 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        // return match ($panel->getId()) {
-        //     'auth' => true,
+        return match ($panel->getId()) {
+            'auth' => true,
 
-        //     'admin' => $this->hasAnyRole(['super_admin','admin']),
+            'admin' => $this->hasAnyRole(['super_admin','admin']),
 
-        //     'app' => $this->hasAnyRole([
-        //         'super_admin',
-        //         'user',
-        //     ]),
+            'app' => $this->hasAnyRole([
+                'super_admin',
+                'user',
+            ]),
 
-        //     default => false,
-        // };
-        return true;
+            default => false,
+        };
+        //return true;
     }
     /**
      * Get the attributes that should be cast.
